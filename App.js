@@ -1,9 +1,7 @@
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 import React from "react";
-import CustomText from "./atoms/text";
 import Navigation from "./navigation/index";
-import { View, StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
@@ -19,12 +17,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
