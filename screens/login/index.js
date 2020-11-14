@@ -2,8 +2,7 @@ import React from "react";
 import { StyleSheet, Image, ImageBackground, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import CustomText from "../../atoms/text";
-import { colors } from "../../atoms/colors";
+import { colors, CustomText } from "../../atoms/";
 import Input from "../../components/input";
 import Button from "../../components/button";
 

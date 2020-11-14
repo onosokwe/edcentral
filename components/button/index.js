@@ -2,8 +2,7 @@ import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
-import CustomText from "../../atoms/text";
-import { colors } from "../../atoms/colors";
+import { colors, CustomText } from "../../atoms";
 
 const Button = (props) => {
 	return (
