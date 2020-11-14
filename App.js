@@ -1,6 +1,5 @@
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import CustomText from "./atoms/text";
 import Navigation from "./navigation/index";
