@@ -19,7 +19,11 @@ const Input = (props) => {
 				onChangeText={props.onChangeText}
 				onFocus={() => setFocus(true)}
 				onBlur={() => setFocus(false)}
-				style={[styles.input, focus ? styles.focus : null, props.style]}
+				style={[
+					styles.input,
+					focus ? styles.focus : props.error ? styles.errorColor : null,
+					props.style,
+				]}
 				{...props}
 			/>
 			<CustomText style={[props.error ? styles.error : null]}>
@@ -43,6 +47,11 @@ const styles = StyleSheet.create({
 
 	focus: {
 		borderColor: colors.primary,
+		borderWidth: 1,
+	},
+
+	errorColor: {
+		borderColor: "rgb(153, 0, 85)",
 		borderWidth: 1,
 	},
 
