@@ -55,7 +55,12 @@ export default function Login(props) {
             value={formik.values.password}
             error={formik.errors.password ? formik.errors.password : null}
           />
-          <CustomText type="medium">Forgot password?</CustomText>
+          <CustomText
+            type="medium"
+            onPress={() => props.navigation.navigate("forgotPassword")}
+          >
+            Forgot password?
+          </CustomText>
           <Button
             onPress={formik.handleSubmit}
             containerStyle={{ marginTop: 8 }}

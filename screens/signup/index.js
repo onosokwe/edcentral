@@ -28,7 +28,7 @@ export default function Signup(props) {
 						secureTextEntry={true}
 						placeholder="********"
 					/>
-					<Button containerStyle={{ marginTop: 8 }} text="Login" />
+					<Button containerStyle={{ marginTop: 8 }} text="SIgnup" />
 					<CustomText
 						type="medium"
 						style={{ textAlign: "center", paddingTop: 20 }}
