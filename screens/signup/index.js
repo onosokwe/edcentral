@@ -7,7 +7,7 @@ import { colors, CustomText } from "../../atoms/";
 import Input from "../../components/input";
 import Button from "../../components/button";
 
-export default function Login(props) {
+export default function Signup(props) {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<ImageBackground
@@ -16,19 +16,28 @@ export default function Login(props) {
 			>
 				<Image source={require("../../assets/images/logo.png")} />
 				<View style={{ width: "90%" }}>
+					<Input label="fullname" placeholder="John Oke" />
 					<Input label="email" placeholder="example@email.com" />
-					<Input label="password" placeholder="example@email.com" />
-					<CustomText type="medium">Forgot password?</CustomText>
+					<Input
+						label="password"
+						secureTextEntry={true}
+						placeholder="********"
+					/>
+					<Input
+						label="confirm password"
+						secureTextEntry={true}
+						placeholder="********"
+					/>
 					<Button containerStyle={{ marginTop: 8 }} text="Login" />
 					<CustomText
 						type="medium"
 						style={{ textAlign: "center", paddingTop: 20 }}
-						onPress={() => props.navigation.navigate("signup")}
+						onPress={() => props.navigation.navigate("login")}
 					>
-            Don't have an account?
+            Already have an account?
 						<CustomText type="medium" style={{ color: colors.primary }}>
 							{" "}
-              Signup
+              Login
 						</CustomText>
 					</CustomText>
 				</View>
@@ -46,6 +55,6 @@ const styles = StyleSheet.create({
 	},
 });
 
-Login.propTypes = {
+Signup.propTypes = {
 	navigation: PropTypes.object,
 };

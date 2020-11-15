@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import PropTypes from "prop-types";
 
-import { colors } from "./index";
+import colors from "./colors";
 
 const CustomText = (props) => {
 	const setFontType = (type) => {
