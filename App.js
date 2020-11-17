@@ -1,8 +1,16 @@
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 import React from "react";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
+
 import Navigation from "./navigation/index";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import rootReducer from "./rootReducer";
+
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 export default function App() {
 	let [fonts] = useFonts({
@@ -12,8 +20,10 @@ export default function App() {
 	});
 	if (!fonts) return <AppLoading />;
 	return (
-		<SafeAreaProvider>
-			<Navigation />
-		</SafeAreaProvider>
+		<Provider store={store}>
+			<SafeAreaProvider>
+				<Navigation />
+			</SafeAreaProvider>
+		</Provider>
 	);
 }

@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import Input from "../../components/input";
-import Button from "../../components/button";
+import Input from "../components/input";
+import Button from "../components/button";
 import { colors, CustomText } from "../../atoms/";
 
 const validationSchema = Yup.object().shape({
@@ -29,10 +29,10 @@ export default function ForgotPassword() {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<ImageBackground
-				source={require("../../assets/images/background.png")}
+				source={require("../assets/images/background.png")}
 				style={styles.background}
 			>
-				<Image source={require("../../assets/images/logo.png")} />
+				<Image source={require("../assets/images/logo.png")} />
 				<View style={{ width: "90%" }}>
 					<CustomText type="medium">Forgot Password</CustomText>
 					<CustomText

@@ -3,18 +3,18 @@ import { StyleSheet, Image, ImageBackground, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PropTypes from "prop-types";
 
-import { colors, CustomText } from "../../atoms/";
-import Input from "../../components/input";
-import Button from "../../components/button";
+import { colors, CustomText } from "../atoms/";
+import Input from "../components/input";
+import Button from "../components/button";
 
 export default function Signup(props) {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<ImageBackground
-				source={require("../../assets/images/background.png")}
+				source={require("../assets/images/background.png")}
 				style={styles.background}
 			>
-				<Image source={require("../../assets/images/logo.png")} />
+				<Image source={require("../assets/images/logo.png")} />
 				<View style={{ width: "90%" }}>
 					<Input label="fullname" placeholder="John Oke" />
 					<Input label="email" placeholder="example@email.com" />
