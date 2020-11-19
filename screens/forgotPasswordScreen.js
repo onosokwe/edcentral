@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 import Input from "../components/input";
 import Button from "../components/button";
-import { colors, CustomText } from "../../atoms/";
+import { colors, CustomText } from "../atoms/";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
