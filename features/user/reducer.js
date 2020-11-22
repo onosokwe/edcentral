@@ -1,34 +1,32 @@
-import {
-	USER_LOGIN_SUCCESS,
-	USER_LOGIN_PENDDING,
-	USER_LOGIN_ERROR,
-} from "./actionTypes";
+import { USER_PENDING, LOGIN_SUCCESS, USER_ERROR } from "./actionTypes";
 
 const initialState = {
 	error: "",
-	fetching: false,
+	loading: false,
+	isLoggedin: false,
 	user: {},
 };
 
 const loginReducer = (state = initialState, action) => {
 	switch (action.type) {
-	case USER_LOGIN_PENDDING:
+	case USER_PENDING:
 		return {
 			...state,
-			fetching: true,
+			loading: true,
 		};
-	case USER_LOGIN_SUCCESS:
+	case LOGIN_SUCCESS:
 		return {
 			...state,
-			fetching: false,
+			loading: false,
+			isLoggedin: true,
 			user: action.payload,
 			error: "",
 		};
-	case USER_LOGIN_ERROR:
+	case USER_ERROR:
 		return {
 			...state,
-			fetching: false,
-			error: action.payload,
+			loading: false,
+			error: action.payload.message,
 		};
 	default:
 		return state;

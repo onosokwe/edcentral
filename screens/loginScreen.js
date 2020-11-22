@@ -4,12 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import PropTypes from "prop-types";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { colors, CustomText } from "../atoms/";
 import Input from "../components/input";
 import Button from "../components/button";
-import { userLogin } from "../features/login/actions";
+import { userLogin } from "../features/user/actions";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -24,6 +24,10 @@ const validationSchema = Yup.object().shape({
 
 export default function Login(props) {
 	const dispatch = useDispatch();
+
+	const { error, loading } = useSelector((state) => state.user);
+
+	console.log(error);
 
 	const formik = useFormik({
 		initialValues: {
@@ -43,6 +47,12 @@ export default function Login(props) {
 				style={styles.background}
 			>
 				<Image source={require("../assets/images/logo.png")} />
+				<CustomText
+					type="semiBold"
+					style={{ textAlign: "center", color: "rgb(153, 0, 85)" }}
+				>
+					{error}
+				</CustomText>
 				<View style={{ width: "90%" }}>
 					<Input
 						label="email"
@@ -68,7 +78,7 @@ export default function Login(props) {
 					<Button
 						onPress={formik.handleSubmit}
 						containerStyle={{ marginTop: 8 }}
-						text="Login"
+						text={loading ? "Loading..." : "Login"}
 					/>
 					<CustomText
 						type="medium"
