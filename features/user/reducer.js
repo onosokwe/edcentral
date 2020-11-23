@@ -1,4 +1,9 @@
-import { USER_PENDING, LOGIN_SUCCESS, USER_ERROR } from "./actionTypes";
+import {
+	USER_PENDING,
+	LOGIN_SUCCESS,
+	USER_ERROR,
+	SIGN_UP_SUCCESS,
+} from "./actionTypes";
 
 const initialState = {
 	error: "",
@@ -20,7 +25,15 @@ const loginReducer = (state = initialState, action) => {
 			loading: false,
 			isLoggedin: true,
 			user: action.payload,
-			error: "",
+			error: null,
+		};
+	case SIGN_UP_SUCCESS:
+		return {
+			...state,
+			loading: false,
+			isLoggedin: true,
+			user: action.payload,
+			error: null,
 		};
 	case USER_ERROR:
 		return {

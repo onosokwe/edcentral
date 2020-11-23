@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 	},
 
 	error: {
-		color: "rgb(153, 0, 85)",
+		color: colors.error,
 		paddingBottom: 16,
 	},
 });

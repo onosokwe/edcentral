@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { colors, CustomText } from "../atoms/";
 import Input from "../components/input";
 import Button from "../components/button";
-import { userLogin } from "../features/user/actions";
+import { login } from "../features/user/actions";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -27,15 +27,13 @@ export default function Login(props) {
 
 	const { error, loading } = useSelector((state) => state.user);
 
-	console.log(error);
-
 	const formik = useFormik({
 		initialValues: {
 			email: "",
 			password: "",
 		},
 		onSubmit: (values) => {
-			userLogin(dispatch, values);
+			login(dispatch, values);
 		},
 		validationSchema,
 	});
@@ -49,7 +47,7 @@ export default function Login(props) {
 				<Image source={require("../assets/images/logo.png")} />
 				<CustomText
 					type="semiBold"
-					style={{ textAlign: "center", color: "rgb(153, 0, 85)" }}
+					style={{ textAlign: "center", color: colors.error }}
 				>
 					{error}
 				</CustomText>
@@ -77,6 +75,7 @@ export default function Login(props) {
 					</CustomText>
 					<Button
 						onPress={formik.handleSubmit}
+						disabled={formik.isSubmitting}
 						containerStyle={{ marginTop: 8 }}
 						text={loading ? "Loading..." : "Login"}
 					/>

@@ -9,6 +9,7 @@ const Button = (props) => {
 		<TouchableOpacity
 			style={[styles.container, props.containerStyle]}
 			onPress={props.onPress}
+			{...props}
 		>
 			{props.prefix}
 			<CustomText type="medium" style={[styles.text, props.textStyle]}>
