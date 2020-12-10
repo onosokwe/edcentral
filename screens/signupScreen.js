@@ -52,6 +52,12 @@ export default function Signup(props) {
         style={styles.background}
       >
         <Image source={require("../assets/images/logo.png")} />
+        <CustomText
+          type="semiBold"
+          style={{ textAlign: "center", color: colors.error }}
+        >
+          {error}
+        </CustomText>
         <View style={{ width: "90%" }}>
           <Input
             label="fullname"
@@ -87,7 +93,12 @@ export default function Signup(props) {
                 : null
             }
           />
-          <Button containerStyle={{ marginTop: 8 }} text="SIgnup" />
+          <Button
+            onPress={formik.handleSubmit}
+            disabled={formik.isSubmitting}
+            containerStyle={{ marginTop: 8 }}
+            text={loading ? "Loading..." : "Signup"}
+          />
           <CustomText
             type="medium"
             style={{ textAlign: "center", paddingTop: 20 }}
