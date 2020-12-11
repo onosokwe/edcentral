@@ -43,7 +43,7 @@ export const signup = async (dispatch, payload) => {
       .collection("users")
       .doc(res.user.uid)
       .set({ ...user, id: res.user.uid });
-    await dispatch(signUpSuccess({ ...user, id: res.user.id }));
+    await dispatch(signUpSuccess({ ...user, id: res.user.uid }));
   } catch (err) {
     dispatch(userError(err));
   }
