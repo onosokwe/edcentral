@@ -15,20 +15,20 @@ import useFirebase from "./hooks/useFirebase";
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 export default function App() {
-	let [fonts] = useFonts({
-		regular: require("./assets/fonts/Rubik-Regular.ttf"),
-		medium: require("./assets/fonts/Rubik-Medium.ttf"),
-		semiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
-	});
+  let [fonts] = useFonts({
+    regular: require("./assets/fonts/Rubik-Regular.ttf"),
+    medium: require("./assets/fonts/Rubik-Medium.ttf"),
+    semiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
+  });
 
-	useFirebase(firebaseConfig);
+  useFirebase(firebaseConfig);
 
-	if (!fonts) return <AppLoading />;
-	return (
-		<Provider store={store}>
-			<SafeAreaProvider>
-				<Navigation />
-			</SafeAreaProvider>
-		</Provider>
-	);
+  if (!fonts) return <AppLoading />;
+  return (
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <Navigation />
+      </SafeAreaProvider>
+    </Provider>
+  );
 }
