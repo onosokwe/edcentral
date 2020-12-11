@@ -34,7 +34,7 @@ const CustomText = (props) => {
 
 CustomText.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(["medium", "semiBold", "regular"]),
   style: PropTypes.any,
 };
 
