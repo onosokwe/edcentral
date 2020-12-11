@@ -2,7 +2,8 @@ import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
-import { CustomText, colors } from "../../atoms";
+import CustomText from "../../atoms/text";
+import colors from "../../atoms/colors";
 
 const Input = (props) => {
   const [focus, setFocus] = React.useState(false);

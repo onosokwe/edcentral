@@ -7,7 +7,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 
-import { colors, CustomText } from "../atoms/";
+import CustomText from "../atoms/text";
+import colors from "../atoms/colors";
+
 import Input from "../components/input";
 import Button from "../components/button";
 import { login } from "../features/user/actions";
