@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <CustomText>Hello</CustomText>
+        <CustomText>Home</CustomText>
       </View>
     </SafeAreaView>
   );

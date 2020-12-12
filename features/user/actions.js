@@ -46,8 +46,14 @@ export const signup = async (dispatch, payload) => {
       .firestore()
       .collection("users")
       .doc(res.user.uid)
-      .set({ ...user, id: res.user.uid });
-    await dispatch(signUpSuccess({ ...user, id: res.user.uid }));
+      .set({ ...user, id: res.user.uid, verified: res.user.emailVerified });
+    await dispatch(
+      signUpSuccess({
+        ...user,
+        id: res.user.uid,
+        verified: res.user.emailVerified,
+      })
+    );
   } catch (err) {
     dispatch(userError(err));
   }
@@ -59,14 +65,16 @@ export const login = async (dispatch, payload) => {
 
     const res = await firebase
       .auth()
-      .signInWithEmailAndPassword(payload.email, payload.password)
-      .then(() =>
-        firebase.auth().onAuthStateChanged((user) => {
-          console.log({ user });
-        })
-      );
+      .signInWithEmailAndPassword(payload.email, payload.password);
 
-    // await dispatch(loginSuccess({ email: payload.email, id: res.user.uid }));
+    await dispatch(
+      loginSuccess({
+        email: payload.email,
+        id: res.user.uid,
+        verified: res.user.emailVerified,
+        name: res.user.displayName,
+      })
+    );
   } catch (err) {
     dispatch(userError(err));
   }
