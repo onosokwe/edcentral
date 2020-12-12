@@ -25,13 +25,11 @@ const styles = StyleSheet.create({
   container: {
     height: "auto",
     backgroundColor: colors.primary,
-    borderWidth: 1,
-    borderColor: colors.primary,
+    borderRadius: 6,
   },
   text: {
-    padding: 16,
-    paddingTop: 16,
-    paddingBottom: 16,
+    padding: 18,
+    paddingVertical: 20,
     color: colors.notWhite,
     textAlign: "center",
   },

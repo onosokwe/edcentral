@@ -9,7 +9,7 @@ const Input = (props) => {
   const [focus, setFocus] = React.useState(false);
 
   return (
-    <View style={{ width: "100%" }}>
+    <View style={{ width: "100%", marginBottom: 10 }}>
       <CustomText type="medium" style={{ textTransform: "capitalize" }}>
         {props.label}
       </CustomText>
@@ -38,12 +38,13 @@ const styles = StyleSheet.create({
   input: {
     marginTop: 4,
     padding: 16,
+    paddingVertical: 20,
     fontSize: 16,
     letterSpacing: 0.232836,
     borderColor: "#B3B0AD",
     color: "#6D6D6D",
-    borderWidth: 1,
-    backgroundColor: "#fff",
+    borderRadius: 6,
+    backgroundColor: "hsla(226,100%,94%,0.53)",
   },
 
   focus: {

@@ -73,6 +73,7 @@ export default function Login(props) {
           <CustomText
             type="medium"
             onPress={() => props.navigation.navigate("forgotPassword")}
+            style={{ marginBottom: 16 }}
           >
             Forgot password?
           </CustomText>
