@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: 18,
-    paddingVertical: 20,
     color: colors.notWhite,
     textAlign: "center",
   },
