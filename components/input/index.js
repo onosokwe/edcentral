@@ -9,7 +9,7 @@ const Input = (props) => {
   const [focus, setFocus] = React.useState(false);
 
   return (
-    <View style={{ width: "100%", marginBottom: 10 }}>
+    <View style={{ width: "100%", marginBottom: 5 }}>
       <CustomText type="medium" style={{ textTransform: "capitalize" }}>
         {props.label}
       </CustomText>
