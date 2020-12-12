@@ -1,4 +1,4 @@
-import { AppLoading } from "expo";
+import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 import React from "react";
 import { Provider } from "react-redux";

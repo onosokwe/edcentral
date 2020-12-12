@@ -38,6 +38,9 @@ export const signup = async (dispatch, payload) => {
     const res = await firebase
       .auth()
       .createUserWithEmailAndPassword(payload.email, payload.password);
+    await res.user.updateProfile({
+      displayName: user.name,
+    });
     await res.user.sendEmailVerification();
     await firebase
       .firestore()
@@ -63,7 +66,7 @@ export const login = async (dispatch, payload) => {
         })
       );
 
-    await dispatch(loginSuccess({ email: payload.email, id: res.user.uid }));
+    // await dispatch(loginSuccess({ email: payload.email, id: res.user.uid }));
   } catch (err) {
     dispatch(userError(err));
   }
