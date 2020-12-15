@@ -97,7 +97,7 @@ export default function Signup(props) {
           />
           <Button
             onPress={formik.handleSubmit}
-            disabled={formik.isSubmitting}
+            disabled={loading}
             containerStyle={{ marginTop: 8 }}
             text={loading ? "Loading..." : "Signup"}
           />
