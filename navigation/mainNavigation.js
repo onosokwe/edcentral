@@ -8,6 +8,11 @@ import ConfirmEmailScreen from "../screens/ConfirmEmailScreen";
 import Schools from "../screens/SchoolsScreen";
 import ScholarShip from "../screens/ScholarShipScreen";
 import Profile from "../screens/ProfileScreen";
+import HomeSvg from "../components/svg/home";
+import colors from "../atoms/colors";
+import ProfileSvg from "../components/svg/profile";
+import SchoolSvg from "../components/svg/school";
+import ScholarshipSvg from "../components/svg/scholarship";
 
 const Tab = createBottomTabNavigator();
 const ConfirmStack = createStackNavigator();
@@ -23,11 +28,41 @@ export default function MainNavigation() {
           <ConfirmStack.Screen name="confirm" component={ConfirmEmailScreen} />
         </ConfirmStack.Navigator>
       ) : (
-        <Tab.Navigator>
-          <Tab.Screen name="home" component={Home} />
-          <Tab.Screen name="profile" component={Profile} />
-          <Tab.Screen name="school" component={Schools} />
-          <Tab.Screen name="scholarships" component={ScholarShip} />
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused }) => {
+              if (route.name === "Home") {
+                return <HomeSvg color={focused ? colors.primary : "#200E32"} />;
+              } else if (route.name === "Profile") {
+                return (
+                  <ProfileSvg color={focused ? colors.primary : "#200E32"} />
+                );
+              } else if (route.name === "School") {
+                return (
+                  <SchoolSvg color={focused ? colors.primary : "#200E32"} />
+                );
+              } else if (route.name === "Scholarships") {
+                return (
+                  <ScholarshipSvg
+                    color={focused ? colors.primary : "#200E32"}
+                  />
+                );
+              }
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: colors.primary,
+            inactiveTintColor: colors.LightBlack,
+            labelPosition: "below-icon",
+            labelStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        >
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="School" component={Schools} />
+          <Tab.Screen name="Scholarships" component={ScholarShip} />
         </Tab.Navigator>
       )}
     </React.Fragment>

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import ConfirmEmailSvg from "../assets/images/confirm";
+import ConfirmEmailSvg from "../components/svg/confirm";
 import colors from "../atoms/colors";
 
 import CustomText from "../atoms/text";
