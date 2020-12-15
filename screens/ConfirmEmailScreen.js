@@ -1,15 +1,13 @@
 import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import PropTypes from "prop-types";
 
 import ConfirmEmailSvg from "../assets/images/confirm";
 import colors from "../atoms/colors";
 
 import CustomText from "../atoms/text";
-import Button from "../components/button";
 
-export default function ConfirmEmailScreen(props) {
+export default function ConfirmEmailScreen() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <View style={styles.container}>
@@ -20,17 +18,8 @@ export default function ConfirmEmailScreen(props) {
             Welcome to edcentral!
           </CustomText>
           <CustomText style={{ color: colors.notBlack, fontSize: 18 }}>
-            Please confirm your email address
+            Please confirm your email address and restart
           </CustomText>
-        </View>
-        <View style={{ width: "90%" }}>
-          <CustomText type="semiBold" style={styles.resend}>
-            Resend email
-          </CustomText>
-          <Button
-            text="Login"
-            onPress={() => props.navigation.navigate("login")}
-          />
         </View>
       </View>
     </SafeAreaView>
@@ -56,14 +45,4 @@ const styles = StyleSheet.create({
     color: colors.notBlack,
     lineHeight: 21.33,
   },
-  resend: {
-    color: colors.primary,
-    fontSize: 14,
-    marginBottom: 24,
-    textAlign: "center",
-  },
 });
-
-ConfirmEmailScreen.propTypes = {
-  navigation: PropTypes.object,
-};

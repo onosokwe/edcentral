@@ -3,3 +3,5 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_OUT_SUCCESS = "SIGN_OUT_SUCCESS";
 export const USER_ERROR = "USER_ERROR";
+export const CONFIRM_EMAIL = "CONFIRM_EMAIL";
+export const LOGIN_REDIRECT = "LOGIN_REDIRECT";

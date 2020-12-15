@@ -7,15 +7,11 @@ import MainNavigation from "./mainNavigation";
 
 const Navigation = () => {
   const {
-    user: { id, verified },
+    user: { id },
   } = useSelector((state) => state.user);
   return (
     <NavigationContainer>
-      {!id || (id && verified === false) ? (
-        <AuthNavigation />
-      ) : (
-        <MainNavigation />
-      )}
+      {!id ? <AuthNavigation /> : <MainNavigation />}
     </NavigationContainer>
   );
 };
