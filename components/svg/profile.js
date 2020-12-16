@@ -5,18 +5,19 @@ import PropTypes from "prop-types";
 export default function ProfileSvg(props) {
   return (
     <Svg
-      width={props.size}
-      height={props.size}
+      width={props.width}
+      height={props.height}
+      viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <Path
-        d="M12.747 15.175c-4.313 0-7.997.68-7.997 3.4 0 2.72 3.66 3.425 7.997 3.425 4.313 0 7.997-.68 7.997-3.4 0-2.721-3.66-3.425-7.997-3.425"
+        d="M12.7468 15.1746C8.43379 15.1746 4.74979 15.8546 4.74979 18.5746C4.74979 21.2956 8.41079 21.9996 12.7468 21.9996C17.0598 21.9996 20.7438 21.3206 20.7438 18.5996C20.7438 15.8786 17.0838 15.1746 12.7468 15.1746Z"
         fill={props.color}
       />
       <Path
-        opacity=".4"
-        d="M12.747 12.584a5.273 5.273 0 005.292-5.292A5.273 5.273 0 0012.747 2a5.274 5.274 0 00-5.292 5.292 5.274 5.274 0 005.292 5.292"
+        opacity="0.4"
+        d="M12.7468 12.5838C15.6848 12.5838 18.0388 10.2288 18.0388 7.29176C18.0388 4.35476 15.6848 1.99976 12.7468 1.99976C9.80977 1.99976 7.45477 4.35476 7.45477 7.29176C7.45477 10.2288 9.80977 12.5838 12.7468 12.5838Z"
         fill={props.color}
       />
     </Svg>
@@ -24,11 +25,13 @@ export default function ProfileSvg(props) {
 }
 
 ProfileSvg.defaultProps = {
-  size: 24,
+  width: 25,
+  height: 24,
   color: "#200E32",
 };
 
 ProfileSvg.propTypes = {
-  size: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
   color: PropTypes.string,
 };
