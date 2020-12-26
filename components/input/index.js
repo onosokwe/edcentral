@@ -9,7 +9,7 @@ const Input = (props) => {
   const [focus, setFocus] = React.useState(false);
 
   return (
-    <View style={{ width: "100%", marginBottom: 5 }}>
+    <View style={[props.containerStyle, styles.container]}>
       <CustomText type="medium" style={{ textTransform: "capitalize" }}>
         {props.label}
       </CustomText>
@@ -35,6 +35,10 @@ const Input = (props) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    marginBottom: 5,
+  },
   input: {
     marginTop: 4,
     padding: 16,
@@ -71,6 +75,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   error: PropTypes.any,
   style: PropTypes.object,
+  containerStyle: PropTypes.object,
 };
 
 export default Input;
