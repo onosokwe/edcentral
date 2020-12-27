@@ -5,6 +5,7 @@ import colors from "../atoms/colors";
 
 import CustomText from "../atoms/text";
 import Input from "../components/input";
+import ScholarshipCard from "../components/scholarshipCard";
 import BookmarkSvg from "../components/svg/bookmark";
 
 export default function ScholarShip() {
@@ -34,6 +35,9 @@ export default function ScholarShip() {
             >
               Sort by
             </CustomText>
+          </View>
+          <View style={styles.cardContainer}>
+            <ScholarshipCard />
           </View>
         </View>
       </View>
@@ -69,12 +73,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContainer: {
-    paddingTop: 32,
+    paddingTop: 30,
     width: "90%",
   },
   num: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  cardContainer: {
+    paddingTop: 20,
   },
 });
