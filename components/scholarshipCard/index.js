@@ -9,42 +9,49 @@ export default function ScholarshipCard(props) {
   return (
     <Pressable onPress={props.onPress}>
       <View style={styles.card}>
-        <Image
-          style={{ width: 60, height: 60, resizeMode: "contain" }}
-          source={{
-            uri:
-              "https://www.total.com/themes/custom/total_com/dist/img/logo_total_290x70px_v3.png",
-          }}
-        />
-        <View
-          style={{
-            paddingLeft: 9,
-            justifyContent: "space-between",
-          }}
-        >
-          <View>
-            <CustomText type="medium" style={styles.scholarshipName}>
-              NNPC/Total Scholarship Scheme
-            </CustomText>
-            <CustomText style={styles.companyName}>Total Petroleum</CustomText>
-          </View>
-          <View style={{ flexDirection: "row", paddingTop: 13 }}>
-            <CustomText style={styles.companyName}>Deadline:</CustomText>
-            <CustomText
-              style={{
-                ...styles.companyName,
-                color: colors.notBlack,
-                paddingLeft: 4,
-              }}
-            >
-              {new Date().toDateString()}
-            </CustomText>
-          </View>
-        </View>
+        <InnerCard />
       </View>
     </Pressable>
   );
 }
+
+export const InnerCard = (props) => {
+  return (
+    <React.Fragment>
+      <Image
+        style={{ width: props.size, height: props.size, resizeMode: "contain" }}
+        source={{
+          uri:
+            "https://www.total.com/themes/custom/total_com/dist/img/logo_total_290x70px_v3.png",
+        }}
+      />
+      <View
+        style={{
+          paddingLeft: 9,
+        }}
+      >
+        <View>
+          <CustomText type="medium" style={styles.scholarshipName}>
+            NNPC/Total Scholarship Scheme
+          </CustomText>
+          <CustomText style={styles.companyName}>Total Petroleum</CustomText>
+        </View>
+        <View style={{ flexDirection: "row", paddingTop: 13 }}>
+          <CustomText style={styles.companyName}>Deadline:</CustomText>
+          <CustomText
+            style={{
+              ...styles.companyName,
+              color: colors.notBlack,
+              paddingLeft: 4,
+            }}
+          >
+            {new Date().toDateString()}
+          </CustomText>
+        </View>
+      </View>
+    </React.Fragment>
+  );
+};
 
 const styles = StyleSheet.create({
   card: {
@@ -71,6 +78,14 @@ const styles = StyleSheet.create({
     color: colors.LightBlack,
   },
 });
+
+InnerCard.defaultProps = {
+  size: 60,
+};
+
+InnerCard.propTypes = {
+  size: PropTypes.number,
+};
 
 ScholarshipCard.propTypes = {
   onPress: PropTypes.func,
