@@ -6,16 +6,29 @@ import { useSelector } from "react-redux";
 import Home from "../screens/homeScreen";
 import ConfirmEmailScreen from "../screens/ConfirmEmailScreen";
 import Schools from "../screens/SchoolsScreen";
-import ScholarShip from "../screens/ScholarShipScreen";
+import ScholarShipList from "../screens/ScholarShipScreen/index";
 import Profile from "../screens/ProfileScreen";
 import HomeSvg from "../components/svg/home";
 import colors from "../atoms/colors";
 import ProfileSvg from "../components/svg/profile";
 import SchoolSvg from "../components/svg/school";
 import ScholarshipSvg from "../components/svg/scholarship";
+import Scholarship from "../screens/ScholarShipScreen/scholarship";
 
 const Tab = createBottomTabNavigator();
 const ConfirmStack = createStackNavigator();
+const ScholarshipStack = createStackNavigator();
+
+const ScholarshipNav = () => (
+  <ScholarshipStack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}
+  >
+    <ScholarshipStack.Screen name="list" component={ScholarShipList} />
+    <ScholarshipStack.Screen name="scholarship" component={Scholarship} />
+  </ScholarshipStack.Navigator>
+);
 
 export default function MainNavigation() {
   const {
@@ -62,7 +75,7 @@ export default function MainNavigation() {
           <Tab.Screen name="Home" component={Home} />
           <Tab.Screen name="Profile" component={Profile} />
           <Tab.Screen name="School" component={Schools} />
-          <Tab.Screen name="Scholarships" component={ScholarShip} />
+          <Tab.Screen name="Scholarships" component={ScholarshipNav} />
         </Tab.Navigator>
       )}
     </React.Fragment>

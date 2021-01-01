@@ -1,14 +1,15 @@
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../atoms/colors";
+import PropTypes from "prop-types";
 
-import CustomText from "../atoms/text";
-import Input from "../components/input";
-import ScholarshipCard from "../components/scholarshipCard";
-import BookmarkSvg from "../components/svg/bookmark";
+import colors from "../../atoms/colors";
+import CustomText from "../../atoms/text";
+import Input from "../../components/input";
+import ScholarshipCard from "../../components/scholarshipCard";
+import BookmarkSvg from "../../components/svg/bookmark";
 
-export default function ScholarShip() {
+export default function ScholarShipList(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.notWhite }}>
       <View style={styles.container}>
@@ -37,7 +38,9 @@ export default function ScholarShip() {
             </CustomText>
           </View>
           <View style={styles.cardContainer}>
-            <ScholarshipCard />
+            <ScholarshipCard
+              onPress={() => props.navigation.navigate("scholarship")}
+            />
           </View>
         </View>
       </View>
@@ -85,3 +88,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
 });
+
+ScholarShipList.propTypes = {
+  navigation: PropTypes.object,
+};
