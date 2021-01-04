@@ -57,11 +57,7 @@ export default function Home() {
             )}
             {!map && (
               <View style={{ justifyContent: "center", alignItems: "center" }}>
-                <CustomText>We need your location data...</CustomText>
-                <Button
-                  onPress={() => Linking.openURL("app-settings:")}
-                  text="Go To Permissions"
-                />
+                <CustomText>Getting your location data...</CustomText>
               </View>
             )}
           </View>
