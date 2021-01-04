@@ -42,11 +42,11 @@ export default function Login(props) {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ImageBackground
-        source={require("../assets/images/background.png")}
-        style={styles.background}
-      >
+    <ImageBackground
+      source={require("../assets/images/background.png")}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={styles.background}>
         <Image source={require("../assets/images/logo.png")} />
         <CustomText
           type="semiBold"
@@ -95,8 +95,8 @@ export default function Login(props) {
             </CustomText>
           </CustomText>
         </View>
-      </ImageBackground>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ImageBackground>
   );
 }
 
