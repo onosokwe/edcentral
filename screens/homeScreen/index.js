@@ -8,7 +8,6 @@ import * as Permissions from "expo-permissions";
 import ShowMap from "./showMap";
 import Top from "./top";
 import CustomText from "../../atoms/text";
-import Button from "../../components/button";
 
 export default function Home() {
   const [map, setMap] = React.useState(false);
@@ -42,7 +41,6 @@ export default function Home() {
     googleStuff();
   }, []);
 
-  console.log({ userLocation, map });
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -56,7 +54,13 @@ export default function Home() {
               />
             )}
             {!map && (
-              <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <View
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
                 <CustomText>Getting your location data...</CustomText>
               </View>
             )}
