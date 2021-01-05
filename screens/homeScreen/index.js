@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Linking } from "expo";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 
