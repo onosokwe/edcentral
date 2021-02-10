@@ -4,13 +4,7 @@ import PropTypes from "prop-types";
 
 export default function LocationSvg(props) {
   return (
-    <Svg
-      width={props.size}
-      height={props.size}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <Svg width={props.size} height={props.size} viewBox="0 0 16 16" fill="none">
       <Path
         fill-rule="evenodd"
         clip-rule="evenodd"

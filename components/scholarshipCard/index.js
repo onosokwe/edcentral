@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import colors from "../../atoms/colors";
 import CustomText from "../../atoms/text";
 
+/**
+ * @param {{ onPress: (event: import("react-native").GestureResponderEvent) => void; }} props
+ */
 export default function ScholarshipCard(props) {
   return (
     <Pressable onPress={props.onPress}>
@@ -14,7 +17,9 @@ export default function ScholarshipCard(props) {
     </Pressable>
   );
 }
-
+/**
+ * @param {{ size: number; }} props
+ */
 export const InnerCard = (props) => {
   return (
     <React.Fragment>

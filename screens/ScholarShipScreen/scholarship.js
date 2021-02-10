@@ -9,6 +9,9 @@ import { InnerCard } from "../../components/scholarshipCard";
 import BackButtonSvg from "../../components/svg/backButton";
 import BookmarkSvg from "../../components/svg/bookmark";
 
+/**
+ * @param {{ navigation: { goBack: () => void; }; }} props
+ */
 export default function Scholarship(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.notWhite }}>

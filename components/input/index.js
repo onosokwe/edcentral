@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
@@ -5,6 +6,9 @@ import PropTypes from "prop-types";
 import CustomText from "../../atoms/text";
 import colors from "../../atoms/colors";
 
+/**
+ * @param {JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<TextInput> & Readonly<import("react-native").TextInputProps> & Readonly<{ children?: React.ReactNode; }>} props
+ */
 const Input = (props) => {
   const [focus, setFocus] = React.useState(false);
 

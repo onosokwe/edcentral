@@ -7,6 +7,7 @@ import ProfileSvg from "../../components/svg/profile";
 import colors from "../../atoms/colors";
 
 export default function Top() {
+  // @ts-ignore
   const { user } = useSelector((state) => state.user);
 
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../atoms/colors";
+import Input from "../../components/input";
 import Top from "./top";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <View style={styles.container}>
         <View style={styles.innerContainer}>
           <Top />
+          <Input placeholder="search" />
         </View>
       </View>
     </SafeAreaView>
