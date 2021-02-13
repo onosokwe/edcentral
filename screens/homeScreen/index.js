@@ -1,6 +1,8 @@
+// @ts-nocheck
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import PropTypes from "prop-types";
 
 import colors from "../../atoms/colors";
 import Input from "../../components/input";
@@ -11,44 +13,50 @@ import Top from "./top";
 
 const items = [
   {
-    text: "school",
+    text: "School",
     // @ts-ignore
     image: <SchoolSvg width="57" height="47" />,
     color: colors.primary,
+    link: "School",
   },
   {
     text: "Scholarship",
     // @ts-ignore
     image: <ScholarshipSvg size={47} />,
     color: colors.lightblue,
+    link: "Scholarships",
   },
   {
     text: "Service providers",
+    link: "ServiceProviders",
     // @ts-ignore
     image: <SchoolSvg />,
     color: "#28CCFF",
   },
   {
     text: "Events",
+    link: "Events",
     // @ts-ignore
     image: <SchoolSvg />,
     color: colors.purple,
   },
   {
     text: "Resources",
+    link: "Resources",
     // @ts-ignore
     image: <SchoolSvg />,
     color: colors.warn,
   },
   {
     text: "Marketplace",
+    link: "Marketplace",
     // @ts-ignore
     image: <SchoolSvg />,
     color: "#FF790E",
   },
 ];
 
-export default function Home() {
+export default function Home(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.notWhite }}>
       <View style={styles.container}>
@@ -65,7 +73,12 @@ export default function Home() {
           >
             {items.map((item) => (
               <View key={item.text} style={{ width: "48%", marginBottom: 30 }}>
-                <Card text={item.text} image={item.image} color={item.color} />
+                <Card
+                  text={item.text}
+                  image={item.image}
+                  color={item.color}
+                  onPress={() => props.navigation.navigate(item.link)}
+                />
               </View>
             ))}
           </View>
@@ -103,3 +116,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+Home.propTypes = {
+  navigation: PropTypes.object,
+};

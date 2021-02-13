@@ -1,40 +1,48 @@
 import React from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 
 import colors from "../../atoms/colors";
 import CustomText from "../../atoms/text";
+
 /**
- * @param {{ color: string; image: React.ReactNode; text: string; }} props
+ * @param {{
+ * onPress: (event: import("react-native").GestureResponderEvent) => void;
+ * color: string;
+ * image: React.ReactNode;
+ * text: string;
+ * }} props
  */
 export default function Card(props) {
   return (
-    <View
-      style={{
-        borderRadius: 6,
-        backgroundColor: props.color,
-        height: 150,
-        shadowColor: props.color,
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.08,
-        shadowRadius: 5,
-        elevation: 5,
-      }}
-    >
-      <ImageBackground
-        // @ts-ignore
-        source={require("../../assets/images/cardBackground.png")}
-        style={styles.container}
-        imageStyle={{ borderRadius: 6 }}
+    <Pressable onPress={props.onPress}>
+      <View
+        style={{
+          borderRadius: 6,
+          backgroundColor: props.color,
+          height: 150,
+          shadowColor: props.color,
+          shadowOffset: { width: 0, height: 3 },
+          shadowOpacity: 0.08,
+          shadowRadius: 5,
+          elevation: 5,
+        }}
       >
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          {props.image}
-          <CustomText type="medium" style={styles.text}>
-            {props.text}
-          </CustomText>
-        </View>
-      </ImageBackground>
-    </View>
+        <ImageBackground
+          // @ts-ignore
+          source={require("../../assets/images/cardBackground.png")}
+          style={styles.container}
+          imageStyle={{ borderRadius: 6 }}
+        >
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            {props.image}
+            <CustomText type="medium" style={styles.text}>
+              {props.text}
+            </CustomText>
+          </View>
+        </ImageBackground>
+      </View>
+    </Pressable>
   );
 }
 
@@ -57,4 +65,5 @@ Card.propTypes = {
   text: PropTypes.string,
   image: PropTypes.node,
   color: PropTypes.string,
+  onPress: PropTypes.func,
 };
