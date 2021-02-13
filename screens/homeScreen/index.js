@@ -4,6 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import colors from "../../atoms/colors";
 import Input from "../../components/input";
+import ScholarshipSvg from "../../components/svg/scholarship";
+import SchoolSvg from "../../components/svg/school";
 import Card from "./card";
 import Top from "./top";
 
@@ -11,32 +13,38 @@ const items = [
   {
     text: "school",
     // @ts-ignore
-    image: require("../../assets/images/school.png"),
+    image: <SchoolSvg width="57" height="47" />,
+    color: colors.primary,
   },
   {
     text: "Scholarship",
     // @ts-ignore
-    image: require("../../assets/images/scholarship.png"),
+    image: <ScholarshipSvg size={47} />,
+    color: colors.lightblue,
   },
   {
     text: "Service providers",
     // @ts-ignore
-    image: require("../../assets/images/serviceProviders.png"),
+    image: <SchoolSvg />,
+    color: "#28CCFF",
   },
   {
     text: "Events",
     // @ts-ignore
-    image: require("../../assets/images/events.png"),
+    image: <SchoolSvg />,
+    color: colors.purple,
   },
   {
     text: "Resources",
     // @ts-ignore
-    image: require("../../assets/images/resources.png"),
+    image: <SchoolSvg />,
+    color: colors.warn,
   },
   {
     text: "Marketplace",
     // @ts-ignore
-    image: require("../../assets/images/marketplace.png"),
+    image: <SchoolSvg />,
+    color: "#FF790E",
   },
 ];
 
@@ -56,8 +64,8 @@ export default function Home() {
             }}
           >
             {items.map((item) => (
-              <View key={item.text} style={{ width: "45%", marginBottom: 30 }}>
-                <Card text={item.text} image={item.image} />
+              <View key={item.text} style={{ width: "48%", marginBottom: 30 }}>
+                <Card text={item.text} image={item.image} color={item.color} />
               </View>
             ))}
           </View>

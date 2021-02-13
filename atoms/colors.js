@@ -4,7 +4,7 @@ const colors = {
   LightBlack: "hsl(0, 0%, 47.5%)",
   notWhite: "hsl(0, 0%, 97.3%)",
   error: "hsl(347,100%,45%)",
-  warn: "hsl(347, 100%, 44.7%)",
+  warn: "hsl(11, 100%, 70.6%);",
   green: "hsl(166, 79.5%, 42.2%)",
   purple: "hsl(247, 93.8%, 68.4%)",
   lightblue: "hsl(187, 100%, 48.4%)",
