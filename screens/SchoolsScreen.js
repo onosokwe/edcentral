@@ -1,8 +1,9 @@
 import React from "react";
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../atoms/colors";
+import PropTypes from "prop-types";
 
+import colors from "../atoms/colors";
 import CustomText from "../atoms/text";
 import BackButtonSvg from "../components/svg/backButton";
 
@@ -14,6 +15,9 @@ const options = [
   "Online learning",
 ];
 
+/**
+ * @param {{ navigation: { goBack: () => void; }; }} props
+ */
 export default function Schools(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.primary }}>
@@ -90,3 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+Schools.propTypes = {
+  navigation: PropTypes.object,
+};
