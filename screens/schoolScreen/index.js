@@ -1,11 +1,13 @@
 import React from "react";
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
+import { useDispatch } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PropTypes from "prop-types";
 
-import colors from "../atoms/colors";
-import CustomText from "../atoms/text";
-import BackButtonSvg from "../components/svg/backButton";
+import colors from "../../atoms/colors";
+import CustomText from "../../atoms/text";
+import BackButtonSvg from "../../components/svg/backButton";
+import { schoolType } from "../../features/schools/actions";
 
 const options = [
   "Private Schools",
@@ -15,15 +17,18 @@ const options = [
   "Online learning",
 ];
 
-/**
- * @param {{ navigation: { goBack: () => void; }; }} props
- */
 export default function Schools(props) {
+  const dispatch = useDispatch();
+
+  const optionLink = (option) => {
+    const newOption = option.replace(/\s/g, "");
+    schoolType(dispatch, { name: option, url: newOption });
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.primary }}>
       <ImageBackground
-        // @ts-ignore
-        source={require("../assets/images/schoolsBackground.png")}
+        source={require("../../assets/images/schoolsBackground.png")}
         style={styles.container}
         imageStyle={{ borderRadius: 6 }}
       >
@@ -40,10 +45,13 @@ export default function Schools(props) {
             </CustomText>
           </View>
           {options.map((option) => (
-            <View style={styles.imageContainer} key={option}>
+            <Pressable
+              style={styles.imageContainer}
+              key={option}
+              onPress={() => optionLink(option)}
+            >
               <ImageBackground
-                // @ts-ignore
-                source={require("../assets/images/schoolsCard.png")}
+                source={require("../../assets/images/schoolsCard.png")}
                 style={styles.image}
                 imageStyle={{ borderRadius: 6 }}
               >
@@ -51,7 +59,7 @@ export default function Schools(props) {
                   {option}
                 </CustomText>
               </ImageBackground>
-            </View>
+            </Pressable>
           ))}
         </View>
       </ImageBackground>
@@ -61,7 +69,6 @@ export default function Schools(props) {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     resizeMode: "cover",
     height: "110%",
   },

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import Home from "../screens/homeScreen";
 import ConfirmEmailScreen from "../screens/ConfirmEmailScreen";
-import Schools from "../screens/SchoolsScreen";
+import Schools from "../screens/schoolScreen/index";
 import ScholarShipList from "../screens/ScholarShipScreen/index";
 import Profile from "../screens/ProfileScreen";
 import HomeSvg from "../components/svg/home";

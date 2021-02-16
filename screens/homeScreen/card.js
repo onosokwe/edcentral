@@ -4,15 +4,6 @@ import PropTypes from "prop-types";
 
 import colors from "../../atoms/colors";
 import CustomText from "../../atoms/text";
-
-/**
- * @param {{
- * onPress: (event: import("react-native").GestureResponderEvent) => void;
- * color: string;
- * image: React.ReactNode;
- * text: string;
- * }} props
- */
 export default function Card(props) {
   return (
     <Pressable onPress={props.onPress}>

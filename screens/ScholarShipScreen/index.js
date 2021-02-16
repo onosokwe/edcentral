@@ -9,9 +9,6 @@ import Input from "../../components/input";
 import ScholarshipCard from "../../components/scholarshipCard";
 import BookmarkSvg from "../../components/svg/bookmark";
 
-/**
- * @param {{ navigation: { navigate: (arg0: string) => void; }; }} props
- */
 export default function ScholarShipList(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.notWhite }}>

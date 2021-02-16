@@ -13,7 +13,7 @@ const initialState = {
   user: {},
 };
 
-const loginReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_PENDING:
       return {
@@ -47,4 +47,4 @@ const loginReducer = (state = initialState, action) => {
   }
 };
 
-export default loginReducer;
+export default userReducer;
