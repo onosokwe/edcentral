@@ -8,7 +8,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,16 +16,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "flowtype"],
-  settings: {
-    "import/resolver": {
-      node: {},
-      webpack: {},
-    },
-    flowtype: {
-      onlyFilesWithFlowAnnotation: true,
-    },
-  },
+  plugins: ["react"],
   rules: {
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],

@@ -1,18 +1,11 @@
 /* eslint-disable indent */
-//@flow
 import * as React from "react";
 import { Text } from "react-native";
 import PropTypes from "prop-types";
 
 import colors from "./colors";
 
-type Props = {
-  type: "medium" | "regular" | "semiBold",
-  style: {},
-  children: React.Node,
-};
-
-const CustomText = (props: Props): React$Element<any> => {
+const CustomText = (props) => {
   const setFontType = (type) => {
     switch (type) {
       case "medium":
@@ -41,7 +34,7 @@ const CustomText = (props: Props): React$Element<any> => {
 
 CustomText.propTypes = {
   children: PropTypes.node,
-  type: (PropTypes.oneOf(["medium", "semiBold", "regular"]): React$PropType$Primitive<"medium" | "regular" | "semiBold">),
+  type: PropTypes.oneOf(["medium", "semiBold", "regular"]),
   style: PropTypes.any,
 };
 
