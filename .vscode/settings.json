@@ -1,3 +1,5 @@
 {
   "deepscan.enable": true,
+  "editor.formatOnSave": false,
+  "flow.pathToFlow": "${workspaceFolder}/node_modules/.bin/flow"
 }

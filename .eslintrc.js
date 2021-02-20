@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended",
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -12,7 +17,16 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "flowtype"],
+  settings: {
+    "import/resolver": {
+      node: {},
+      webpack: {},
+    },
+    flowtype: {
+      onlyFilesWithFlowAnnotation: true,
+    },
+  },
   rules: {
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
