@@ -10,11 +10,10 @@ import BackButtonSvg from "../../components/svg/backButton";
 import { schoolType } from "../../features/schools/actions";
 
 const options = [
-  "Private Schools",
-  "Public Schools",
+  "Creche Schools",
+  "Primay Schools",
+  "Secondary Schools",
   "Universities",
-  "Law School",
-  "Online learning",
 ];
 
 export default function Schools(props) {
@@ -32,7 +31,14 @@ export default function Schools(props) {
         style={styles.container}
         imageStyle={{ borderRadius: 6 }}
       >
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <View
+          style={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            // backgroundColor: "pink",
+            height: "80%",
+          }}
+        >
           <View style={styles.top}>
             <Pressable onPress={() => props.navigation.goBack()}>
               <BackButtonSvg />
@@ -44,23 +50,33 @@ export default function Schools(props) {
               Schools
             </CustomText>
           </View>
-          {options.map((option) => (
-            <Pressable
-              style={styles.imageContainer}
-              key={option}
-              onPress={() => optionLink(option)}
-            >
-              <ImageBackground
-                source={require("../../assets/images/schoolsCard.png")}
-                style={styles.image}
-                imageStyle={{ borderRadius: 6 }}
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              // backgroundColor: "blue",
+              height: "auto",
+            }}
+          >
+            {options.map((option) => (
+              <Pressable
+                style={styles.imageContainer}
+                key={option}
+                onPress={() => optionLink(option)}
               >
-                <CustomText style={styles.text} type="medium">
-                  {option}
-                </CustomText>
-              </ImageBackground>
-            </Pressable>
-          ))}
+                <ImageBackground
+                  source={require("../../assets/images/schoolsCard.png")}
+                  style={styles.image}
+                  imageStyle={{ borderRadius: 6 }}
+                >
+                  <CustomText style={styles.text} type="medium">
+                    {option}
+                  </CustomText>
+                </ImageBackground>
+              </Pressable>
+            ))}
+          </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
