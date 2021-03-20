@@ -1,13 +1,13 @@
 import React from "react";
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
-import { useDispatch } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PropTypes from "prop-types";
+import { CommonActions } from "@react-navigation/native";
 
 import colors from "../../atoms/colors";
 import CustomText from "../../atoms/text";
 import BackButtonSvg from "../../components/svg/backButton";
-import { schoolType } from "../../features/schools/actions";
+// import { useRoute } from "@react-navigation/native";
 
 const options = [
   "Creche Schools",
@@ -17,13 +17,6 @@ const options = [
 ];
 
 export default function Schools(props) {
-  const dispatch = useDispatch();
-
-  const optionLink = (option) => {
-    const newOption = option.replace(/\s/g, "");
-    schoolType(dispatch, { name: option, url: newOption });
-  };
-
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.primary }}>
       <ImageBackground
@@ -43,10 +36,7 @@ export default function Schools(props) {
             <Pressable onPress={() => props.navigation.goBack()}>
               <BackButtonSvg />
             </Pressable>
-            <CustomText
-              type="medium"
-              style={{ textAlign: "center", marginLeft: "35%" }}
-            >
+            <CustomText type="medium" style={{ textAlign: "center", flex: 1 }}>
               Schools
             </CustomText>
           </View>
@@ -63,7 +53,16 @@ export default function Schools(props) {
               <Pressable
                 style={styles.imageContainer}
                 key={option}
-                onPress={() => optionLink(option)}
+                onPress={() =>
+                  props.navigation.dispatch(
+                    CommonActions.navigate({
+                      name: "schoolType",
+                      params: {
+                        schoolType: option,
+                      },
+                    })
+                  )
+                }
               >
                 <ImageBackground
                   source={require("../../assets/images/schoolsCard.png")}
