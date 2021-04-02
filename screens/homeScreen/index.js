@@ -29,28 +29,28 @@ const items = [
     text: "Service providers",
     link: "ServiceProviders",
     // @ts-ignore
-    image: <SchoolSvg />,
+    image: <SchoolSvg width="57" height="47" />,
     color: "#28CCFF",
   },
   {
     text: "Events",
     link: "Events",
     // @ts-ignore
-    image: <SchoolSvg />,
+    image: <SchoolSvg width="57" height="47" />,
     color: colors.purple,
   },
   {
     text: "Resources",
     link: "Resources",
     // @ts-ignore
-    image: <SchoolSvg />,
+    image: <SchoolSvg width="57" height="47" />,
     color: colors.warn,
   },
   {
     text: "Marketplace",
     link: "Marketplace",
     // @ts-ignore
-    image: <SchoolSvg />,
+    image: <SchoolSvg width="57" height="47" />,
     color: "#FF790E",
   },
 ];

@@ -5,6 +5,16 @@ import PropTypes from "prop-types";
 
 import colors from "./colors";
 
+export const fontSize = {
+  label: 14,
+  small: 12,
+  display: 64,
+  largeText: 24,
+  normal: 16,
+  h2: 48,
+  h3: 32,
+};
+
 const CustomText = (props) => {
   const setFontType = (type) => {
     switch (type) {

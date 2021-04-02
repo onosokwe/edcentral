@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Schools from "../screens/schoolScreen/index";
 import SchoolType from "../screens/schoolScreen/schoolType";
+import SecondraySchool from "../screens/schoolScreen/secondraySchool";
 
 const SchoolStack = createStackNavigator();
 
@@ -13,7 +14,8 @@ const SchoolNav = () => (
     }}
   >
     <SchoolStack.Screen name="school" component={Schools} />
-    <SchoolStack.Screen name="schoolType" component={SchoolType} />
+    <SchoolStack.Screen name="creche-primary" component={SchoolType} />
+    <SchoolStack.Screen name="secondary-school" component={SecondraySchool} />
   </SchoolStack.Navigator>
 );
 
