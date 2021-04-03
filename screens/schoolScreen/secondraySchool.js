@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Pressable } from "react-native";
+import { View } from "react-native";
 import PropTypes from "prop-types";
 
 import colors from "../../atoms/colors";
@@ -48,7 +48,5 @@ SecondarySchool.propTypes = {
   route: PropTypes.object,
   navigation: PropTypes.object,
 };
-
-const styles = StyleSheet.create({});
 
 export default SecondarySchool;

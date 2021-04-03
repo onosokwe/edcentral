@@ -1,11 +1,9 @@
 /* eslint-disable indent */
 
 import React from "react";
-import { Pressable, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import { CommonActions } from "@react-navigation/native";
 
-import colors from "../../atoms/colors";
 import Container from "./container";
 import SchoolsCard from "./SchoolsCard";
 
