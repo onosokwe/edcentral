@@ -7,12 +7,7 @@ import { CommonActions } from "@react-navigation/native";
 import Container from "./container";
 import SchoolsCard from "./SchoolsCard";
 
-const options = [
-  "Creche Schools",
-  "Primary Schools",
-  "Secondary Schools",
-  "Universities",
-];
+const options = ["Creche Schools", "Primary Schools", "Secondary Schools"];
 
 export default function Schools(props) {
   const gotoNext = (option) => {

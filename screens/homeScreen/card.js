@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 
 import colors from "../../atoms/colors";
@@ -19,19 +19,14 @@ export default function Card(props) {
           elevation: 5,
         }}
       >
-        <ImageBackground
-          // @ts-ignore
-          source={require("../../assets/images/cardBackground.png")}
-          style={styles.container}
-          imageStyle={{ borderRadius: 6 }}
-        >
+        <View style={styles.container}>
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             {props.image}
             <CustomText type="medium" style={styles.text}>
               {props.text}
             </CustomText>
           </View>
-        </ImageBackground>
+        </View>
       </View>
     </Pressable>
   );
@@ -43,6 +38,7 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 6,
   },
   text: {
     color: colors.notBlack,

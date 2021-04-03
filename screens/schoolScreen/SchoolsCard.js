@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, Pressable, StyleSheet } from "react-native";
+import { View, Pressable, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import colors from "../../atoms/colors";
 import CustomText from "../../atoms/text";
@@ -7,15 +7,11 @@ import CustomText from "../../atoms/text";
 export default function SchoolsCard(props) {
   return (
     <Pressable style={styles.imageContainer} onPress={props.onPress}>
-      <ImageBackground
-        source={require("../../assets/images/schoolsCard.png")}
-        style={styles.image}
-        imageStyle={{ borderRadius: 6 }}
-      >
+      <View style={styles.image}>
         <CustomText style={styles.text} type="medium">
           {props.text}
         </CustomText>
-      </ImageBackground>
+      </View>
     </Pressable>
   );
 }
@@ -37,6 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingLeft: 24,
+    borderRadius: 6,
   },
   text: {
     color: colors.notBlack,

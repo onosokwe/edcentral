@@ -26,8 +26,8 @@ const items = [
     link: "Scholarships",
   },
   {
-    text: "Service providers",
-    link: "ServiceProviders",
+    text: "Universities",
+    link: "Universities",
     // @ts-ignore
     image: <SchoolSvg width="57" height="47" />,
     color: "#28CCFF",
@@ -61,7 +61,7 @@ export default function Home(props) {
       <View style={styles.container}>
         <View style={styles.innerContainer}>
           <Top />
-          <Input placeholder="search" />
+          <Input placeholder="Enter Location" />
           <View
             style={{
               paddingTop: 20,
