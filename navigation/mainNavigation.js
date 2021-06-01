@@ -3,9 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useSelector } from "react-redux";
 
-import Home from "../screens/homeScreen";
+import HomeNav from "./homeNav";
 import ConfirmEmailScreen from "../screens/ConfirmEmailScreen";
-import Schools from "../screens/schoolScreen/index";
 import Profile from "../screens/ProfileScreen";
 import HomeSvg from "../components/svg/home";
 import colors from "../atoms/colors";
@@ -60,7 +59,7 @@ export default function MainNavigation() {
             },
           }}
         >
-          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Home" component={HomeNav} />
           <Tab.Screen name="Profile" component={Profile} />
           <Tab.Screen name="School" component={SchoolNav} />
           <Tab.Screen name="Scholarships" component={ScholarshipNav} />

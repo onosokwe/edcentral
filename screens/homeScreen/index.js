@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PropTypes from "prop-types";
 
@@ -62,8 +62,8 @@ export default function Home(props) {
         <View style={styles.innerContainer}>
           <Top />
           <Input placeholder="Enter Location" />
-          <View
-            style={{
+          <ScrollView
+            contentContainerStyle={{
               paddingTop: 20,
               flexDirection: "row",
               justifyContent: "space-between",
@@ -80,7 +80,7 @@ export default function Home(props) {
                 />
               </View>
             ))}
-          </View>
+          </ScrollView>
         </View>
       </View>
     </SafeAreaView>
