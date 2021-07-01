@@ -20,6 +20,7 @@ const ConfirmStack = createStackNavigator();
 export default function MainNavigation() {
   const {
     user: { verified },
+    // @ts-ignore
   } = useSelector((state) => state.user);
   return (
     <React.Fragment>

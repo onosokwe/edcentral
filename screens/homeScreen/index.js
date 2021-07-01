@@ -27,7 +27,7 @@ const items = [
   },
   {
     text: "Universities",
-    link: "Universities",
+    link: "universities",
     // @ts-ignore
     image: <SchoolSvg width="57" height="47" />,
     color: "#28CCFF",
