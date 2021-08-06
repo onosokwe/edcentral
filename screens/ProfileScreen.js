@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { useSelector } from "react-redux";
@@ -7,6 +9,7 @@ import colors from "../atoms/colors";
 import ProfileSvg from "../components/svg/profile";
 
 export default function Profile() {
+  // @ts-ignore
   const { user } = useSelector((state) => state.user);
   return (
     <View style={styles.container}>
@@ -22,8 +25,9 @@ export default function Profile() {
       </View>
       <View style={styles.body}>
         <Image
-          style={{ width: 279.07, height: 202.29 }}
-          source={require("../assets/images/profile-empty.png")}
+          style={{ width: 219.12, height: 98.65 }}
+          source={require(// @ts-ignore
+          "../assets/images/profile-empty.png")}
         />
         <CustomText
           style={{
@@ -33,8 +37,7 @@ export default function Profile() {
             color: colors.LightBlack,
           }}
         >
-          you haven’t applied for any scholarship yet. go to scholarships
-          section to apply
+          you haven’t applied for any scholarship yet. go to scholarships section to apply
         </CustomText>
       </View>
     </View>

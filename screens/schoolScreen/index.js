@@ -9,8 +9,11 @@ import SchoolsCard from "./SchoolsCard";
 
 const options = ["Creche Schools", "Primary Schools", "Secondary Schools"];
 
+/**
+ * @param {{ navigation: { dispatch: (arg0: CommonActions.Action) => void; goBack: () => any; }; }} props
+ */
 export default function Schools(props) {
-  const gotoNext = (option) => {
+  const gotoNext = (/** @type {string} */ option) => {
     switch (option) {
       case "Creche Schools":
       case "Primary Schools":

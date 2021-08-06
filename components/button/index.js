@@ -7,12 +7,7 @@ import colors from "../../atoms/colors";
 
 const Button = (props) => {
   return (
-    <Pressable
-      android_ripple
-      style={[styles.container, props.containerStyle]}
-      onPress={props.onPress}
-      {...props}
-    >
+    <Pressable android_ripple style={[styles.container, props.containerStyle]} onPress={props.onPress} {...props}>
       {props.prefix}
       <CustomText type="medium" style={[styles.text, props.textStyle]}>
         {props.text}

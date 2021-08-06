@@ -24,16 +24,10 @@ const Input = (props) => {
         onChangeText={props.onChangeText}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
-        style={[
-          styles.input,
-          focus ? styles.focus : props.error ? styles.errorColor : null,
-          props.style,
-        ]}
+        style={[styles.input, focus ? styles.focus : props.error ? styles.errorColor : null, props.style]}
         {...props}
       />
-      <CustomText style={[props.error ? styles.error : null]}>
-        {props.error}
-      </CustomText>
+      <CustomText style={[props.error ? styles.error : null]}>{props.error}</CustomText>
     </View>
   );
 };
@@ -45,9 +39,9 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 4,
-    padding: 16,
-    paddingVertical: 18,
-    fontSize: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    fontSize: 14,
     letterSpacing: 0.232836,
     borderColor: "#B3B0AD",
     color: "#6D6D6D",

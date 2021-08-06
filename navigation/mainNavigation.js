@@ -35,19 +35,11 @@ export default function MainNavigation() {
               if (route.name === "Home") {
                 return <HomeSvg color={focused ? colors.primary : "#200E32"} />;
               } else if (route.name === "Profile") {
-                return (
-                  <ProfileSvg color={focused ? colors.primary : "#200E32"} />
-                );
+                return <ProfileSvg color={focused ? colors.primary : "#200E32"} />;
               } else if (route.name === "School") {
-                return (
-                  <SchoolSvg color={focused ? colors.primary : "#200E32"} />
-                );
+                return <SchoolSvg color={focused ? colors.primary : "#200E32"} />;
               } else if (route.name === "Scholarships") {
-                return (
-                  <ScholarshipSvg
-                    color={focused ? colors.primary : "#200E32"}
-                  />
-                );
+                return <ScholarshipSvg color={focused ? colors.primary : "#200E32"} />;
               }
             },
           })}
@@ -55,8 +47,13 @@ export default function MainNavigation() {
             activeTintColor: colors.primary,
             inactiveTintColor: colors.LightBlack,
             labelPosition: "below-icon",
+            style: {
+              padding: 10,
+              height: 60,
+            },
             labelStyle: {
               fontWeight: "bold",
+              paddingBottom: 10,
             },
           }}
         >

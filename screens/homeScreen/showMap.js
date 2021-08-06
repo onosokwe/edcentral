@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import MapView from "react-native-maps";
 import PropTypes from "prop-types";
 
+// @ts-ignore
 const { PROVIDER_GOOGLE } = MapView;
 
 export default function ShowMap({ latitude, longitude }) {
@@ -11,8 +12,8 @@ export default function ShowMap({ latitude, longitude }) {
       followsUserLocation
       provider={PROVIDER_GOOGLE}
       initialRegion={{
-        latitude: latitude,
-        longitude: longitude,
+        latitude: 6.6127,
+        longitude: 3.3544,
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
       }}

@@ -9,6 +9,9 @@ import ScholarshipSvg from "../../components/svg/scholarship";
 import SchoolSvg from "../../components/svg/school";
 import Card from "./card";
 import Top from "./top";
+import EventSvg from "../../components/svg/eventSvg";
+import ResourceSvg from "../../components/svg/ResourceSvg";
+import MarketPlaceSvg from "../../components/svg/MarketPlaceSvg";
 
 const items = [
   {
@@ -36,21 +39,21 @@ const items = [
     text: "Events",
     link: "Events",
     // @ts-ignore
-    image: <SchoolSvg width="57" height="47" />,
+    image: <EventSvg width="57" height="47" />,
     color: colors.purple,
   },
   {
     text: "Resources",
     link: "Resources",
     // @ts-ignore
-    image: <SchoolSvg width="57" height="47" />,
+    image: <ResourceSvg width="57" height="47" />,
     color: colors.warn,
   },
   {
     text: "Marketplace",
     link: "Marketplace",
     // @ts-ignore
-    image: <SchoolSvg width="57" height="47" />,
+    image: <MarketPlaceSvg width="57" height="47" />,
     color: "#FF790E",
   },
 ];
