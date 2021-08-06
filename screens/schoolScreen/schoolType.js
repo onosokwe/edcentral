@@ -12,9 +12,9 @@ const SchoolType = (props) => {
   const { route } = props;
   return (
     <Container back={() => props.navigation.goBack()} name={route.params.schoolType}>
-      <View style={{ width: "100%" }}>
-        <Input placeholder="enter location" />
-        <View
+      {/* <View style={{ width: "100%" }}> */}
+      {/* <Input placeholder="enter location" /> */}
+      {/* <View
           style={{
             justifyContent: "center",
             alignItems: "center",
@@ -27,9 +27,9 @@ const SchoolType = (props) => {
             source={require("../../assets/images/emptymap.png")}
           />
           <CustomText style={{ color: colors.LightBlack, paddingTop: 40 }}>Please enter prefered location</CustomText>
-        </View>
-        {/* <ShowMap /> */}
-      </View>
+        </View> */}
+      <ShowMap />
+      {/* </View> */}
     </Container>
   );
 };
