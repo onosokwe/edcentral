@@ -47,14 +47,14 @@ export default function MainNavigation() {
             activeTintColor: colors.primary,
             inactiveTintColor: colors.LightBlack,
             labelPosition: "below-icon",
-            style: {
-              padding: 10,
-              height: 60,
-            },
-            labelStyle: {
-              fontWeight: "bold",
-              paddingBottom: 10,
-            },
+            // style: {
+            //   padding: 10,
+            //   height: 60,
+            // },
+            // labelStyle: {
+            //   fontWeight: "bold",
+            //   paddingBottom: 10,
+            // },
           }}
         >
           <Tab.Screen name="Home" component={HomeNav} />
